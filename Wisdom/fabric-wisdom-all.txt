@@ -1,0 +1,374 @@
+ airie-teachings git:(main) ✗ fabric -y "https://youtu.be/UbDyjIIGaxQ\?si\=jmBrn0WWmLFQ-cTI" --pattern extract_wisdom
+> ~/Desktop/airie-teachings/videos 
+```markdown
+## SUMMARY
+The video discusses Fabric, an open-source AI tool created by Daniel Misler, designed to augment human capabilities by reducing friction in using AI.
+
+## IDEAS
+- Fabric aims to augment humans with AI, reducing friction in problem-solving.
+- Fabric is an open-source, command-line interface tool for integrating AI into workflows.
+- Fabric uses "patterns," curated prompts to extract insights from text.
+- Patterns are open-sourced, crowdsourced, and continually improved by users.
+- Fabric allows users to see and modify system prompts for better AI interaction.
+- Patterns mimic human-like interaction with AI for improved responses.
+- Fabric's CLI-native design reduces time spent accessing AI tools.
+- Fabric supports multiple interfaces, including voice and GUI apps.
+- Users can create custom patterns to solve specific problems.
+- Fabric acts as an AI framework, not an AI itself, relying on external models.
+- Users need API keys for OpenAI, Anthropic, or local models.
+- Fabric supports local LLMs, providing cost-effective AI solutions.
+- Fabric enables remote AI server access via tools like TwinGate.
+- Fabric patterns can be stitched together for complex tasks.
+- Fabric allows users to save AI outputs directly to note-taking apps like Obsidian.
+- Fabric supports text-based manipulation, emphasizing a "world of text."
+- Fabric encourages capturing ideas as text for easy manipulation.
+- Fabric is designed for human flourishing by optimizing content consumption.
+- Fabric helps users prioritize content worth deep engagement.
+- Fabric's creator, Daniel Misler, emphasizes AI's role in human augmentation.
+- Fabric can filter content, highlighting what's worth full attention.
+- Fabric's patterns are results of iterative refinement for quality outputs.
+- Users can record and transcribe conversations for analysis with Fabric.
+- Fabric's development aligns with aiding human transition to "Human 3.0."
+- Fabric supports creating a feedback loop for personal development.
+- Fabric enables analyzing personal data for insights into habits and moods.
+- The tool is part of a broader philosophy to enhance human capabilities.
+- Fabric's creator values context definition for personalized AI interaction.
+- Fabric's open-source nature encourages collaboration and innovation.
+- Fabric's patterns are akin to solving puzzles for specific tasks.
+- Fabric's integration with Obsidian enhances note-taking and information management.
+- Fabric's CLI integration suits users comfortable with command-line environments.
+
+## INSIGHTS
+- Fabric reduces AI interaction friction, enhancing problem-solving efficiency for users.
+- Open-source patterns allow users to see and refine AI interaction prompts.
+- Fabric's design encourages AI as a tool for human augmentation, not replacement.
+- Patterns reflect iterative design, ensuring high-quality AI interactions.
+- Fabric's CLI-native approach streamlines AI tool access, saving user time.
+- Users can craft custom patterns, tailoring AI to specific personal needs.
+- Fabric's text-centric approach facilitates seamless integration with various tools.
+- Patterns mimic human thought processes, enhancing AI responses.
+- Fabric aids in filtering valuable content, optimizing user attention and learning.
+- Collaboration in pattern development leads to continuous improvement and innovation.
+
+## QUOTES
+- "The goal is to augment humans with AI, reducing friction to solve problems."
+- "Fabric is all about reducing friction to have AI help you solve problems."
+- "It's open-source, so you can actually see this system prompt."
+- "Talking to these AI like they're humans elicits a better response."
+- "The main thrust to this project is to collect problems and solutions in the form of patterns."
+- "Fabric's CLI-native design allows everything here in the CLI."
+- "I capture a concept or a structure for an essay immediately in a note."
+- "Fabric enables remote AI server access via tools like TwinGate."
+- "I'm using it to determine what I should go watch."
+- "Fabric's development is about increasing human flourishing by helping people."
+- "It's not about replacing humans but about augmenting humans to help us become better."
+- "Fabric allows users to see and modify system prompts for better AI interaction."
+- "Patterns are open-sourced, crowdsourced, and continually improved by users."
+- "Fabric emphasizes a world of text, getting everything into a text format."
+- "Patterns mimic human-like interaction with AI for improved responses."
+- "Users need API keys for OpenAI, Anthropic, or local models."
+- "Fabric patterns can be stitched together for complex tasks."
+- "Fabric supports creating a feedback loop for personal development."
+- "Fabric's integration with Obsidian enhances note-taking and information management."
+- "Fabric's creator, Daniel Misler, emphasizes AI's role in human augmentation."
+
+## HABITS
+- Capture ideas immediately in text for future manipulation.
+- Record and transcribe conversations for detailed analysis and insights.
+- Use CLI tools to streamline workflows and reduce time spent on repetitive tasks.
+- Regularly update and refine AI interaction patterns for continuous improvement.
+- Integrate AI tools into daily routines for enhanced productivity.
+- Prioritize content worth deep engagement using AI filters.
+- Create custom patterns for specific personal and professional needs.
+- Utilize open-source tools to collaborate and innovate with a broader community.
+- Analyze personal data to uncover insights into habits and mood patterns.
+- Implement feedback loops to monitor and improve personal development.
+- Embrace a text-centric approach for managing and manipulating information.
+- Use AI tools to augment human capabilities, not replace them.
+- Define personal context for tailored AI interactions.
+- Collaborate on pattern development for shared knowledge and innovation.
+- Utilize remote access solutions for seamless AI tool integration.
+
+## FACTS
+- Fabric is an open-source AI tool designed to augment human capabilities.
+- Fabric supports multiple AI models, including OpenAI and Anthropic.
+- Fabric's CLI-native design reduces time spent accessing AI tools.
+- Patterns in Fabric are open-sourced and crowdsourced for continuous improvement.
+- Users can create custom patterns to solve specific problems with Fabric.
+- Fabric supports local LLMs, providing cost-effective AI solutions.
+- Remote AI server access is possible with tools like TwinGate.
+- Fabric emphasizes a "world of text," facilitating seamless integration.
+- Patterns are iteratively refined for quality AI interactions.
+- Fabric aids in filtering valuable content for optimized user attention.
+- Fabric's development aligns with aiding human transition to "Human 3.0."
+- Users need API keys for accessing various AI models in Fabric.
+- Fabric's integration with Obsidian enhances note-taking capabilities.
+- Fabric's patterns mimic human-like interaction with AI for improved responses.
+- Fabric's creator, Daniel Misler, emphasizes AI's role in human augmentation.
+
+## REFERENCES
+- Fabric by Daniel Misler
+- Strava app
+- Notion
+- Obsidian
+- TwinGate
+- OpenAI
+- Anthropic
+- LLaMA models
+- Whisper AI
+- David Allen's "Getting Things Done"
+
+## ONE-SENTENCE TAKEAWAY
+Fabric is an open-source AI tool enhancing human capabilities by reducing friction in AI problem-solving.
+
+## RECOMMENDATIONS
+- Use Fabric to streamline AI interactions and improve problem-solving efficiency.
+- Explore open-source patterns to refine AI interaction and enhance responses.
+- Create custom patterns for tailored AI solutions to specific needs.
+- Integrate Fabric with note-taking apps for seamless information management.
+- Use Fabric to filter content, optimizing attention on valuable information.
+- Leverage Fabric's CLI-native design for efficient AI tool access.
+- Collaborate on pattern development for shared innovation and improvement.
+- Analyze personal data with Fabric for insights into habits and mood patterns.
+- Implement feedback loops to monitor and enhance personal development.
+- Embrace a text-centric approach for managing and manipulating information.
+- Use remote access solutions for seamless AI tool integration.
+- Regularly update and refine AI patterns for continuous improvement.
+- Capture ideas immediately in text for future manipulation and analysis.
+- Utilize AI tools like Fabric to augment human capabilities, not replace them.
+- Define personal context for tailored AI interactions and better outcomes.
+```
+zsh: is a directory: /Users/markcarpenter/Desktop/airie-teachings/videos
+Usage:
+  fabric [OPTIONS]
+
+Application Options:
+  -p, --pattern=            Choose a pattern from the available patterns
+  -v, --variable=           Values for pattern variables, e.g. -v=#role:expert -v=#points:30
+  -C, --context=            Choose a context from the available contexts
+      --session=            Choose a session from the available sessions
+  -a, --attachment=         Attachment path or URL (e.g. for OpenAI image recognition messages)
+  -S, --setup               Run setup for all reconfigurable parts of fabric
+  -t, --temperature=        Set temperature (default: 0.7)
+  -T, --topp=               Set top P (default: 0.9)
+  -s, --stream              Stream
+  -P, --presencepenalty=    Set presence penalty (default: 0.0)
+  -r, --raw                 Use the defaults of the model without sending chat options (like temperature etc.)
+                            and use the user role instead of the system role for patterns.
+  -F, --frequencypenalty=   Set frequency penalty (default: 0.0)
+  -l, --listpatterns        List all patterns
+  -L, --listmodels          List all available models
+  -x, --listcontexts        List all contexts
+  -X, --listsessions        List all sessions
+  -U, --updatepatterns      Update patterns
+  -c, --copy                Copy to clipboard
+  -m, --model=              Choose model
+      --modelContextLength= Model context length (only affects ollama)
+  -o, --output=             Output to file
+      --output-session      Output the entire session (also a temporary one) to the output file
+  -n, --latest=             Number of latest patterns to list (default: 0)
+  -d, --changeDefaultModel  Change default model
+  -y, --youtube=            YouTube video or play list "URL" to grab transcript, comments from it and send to
+                            chat or print it put to the console and store it in the output file
+      --playlist            Prefer playlist over video if both ids are present in the URL
+      --transcript          Grab transcript from YouTube video and send to chat (it used per default).
+      --comments            Grab comments from YouTube video and send to chat
+  -g, --language=           Specify the Language Code for the chat, e.g. -g=en -g=zh
+  -u, --scrape_url=         Scrape website URL to markdown using Jina AI
+  -q, --scrape_question=    Search question using Jina AI
+  -e, --seed=               Seed to be used for LMM generation
+  -w, --wipecontext=        Wipe context
+  -W, --wipesession=        Wipe session
+      --printcontext=       Print context
+      --printsession=       Print session
+      --readability         Convert HTML input into a clean, readable view
+      --input-has-vars      Apply variables to user input
+      --dry-run             Show what would be sent to the model without actually sending it
+      --serve               Serve the Fabric Rest API
+      --address=            The address to bind the REST API (default: :8080)
+      --config=             Path to YAML config file
+      --version             Print current version
+
+Help Options:
+  -h, --help                Show this help message
+
+agility_story
+ai
+analyze_answers
+analyze_candidates
+analyze_cfp_submission
+analyze_claims
+analyze_comments
+analyze_debate
+analyze_email_headers
+analyze_incident
+analyze_interviewer_techniques
+analyze_logs
+analyze_malware
+analyze_military_strategy
+analyze_mistakes
+analyze_paper
+analyze_patent
+analyze_personality
+analyze_presentation
+analyze_product_feedback
+analyze_proposition
+analyze_prose
+analyze_prose_json
+analyze_prose_pinker
+analyze_sales_call
+analyze_spiritual_text
+analyze_tech_impact
+analyze_threat_report
+analyze_threat_report_trends
+answer_interview_question
+ask_secure_by_design_questions
+ask_uncle_duke
+capture_thinkers_work
+check_agreement
+clean_text
+coding_master
+compare_and_contrast
+create_5_sentence_summary
+create_academic_paper
+create_ai_jobs_analysis
+create_aphorisms
+create_art_prompt
+create_better_frame
+create_coding_project
+create_command
+create_cyber_summary
+create_design_document
+create_diy
+create_formal_email
+create_git_diff_commit
+create_graph_from_input
+create_hormozi_offer
+create_idea_compass
+create_investigation_visualization
+create_keynote
+create_logo
+create_markmap_visualization
+create_mermaid_visualization
+create_mermaid_visualization_for_github
+create_micro_summary
+create_network_threat_landscape
+create_npc
+create_pattern
+create_quiz
+create_reading_plan
+create_recursive_outline
+create_report_finding
+create_rpg_summary
+create_security_update
+create_show_intro
+create_sigma_rules
+create_story_explanation
+create_stride_threat_model
+create_summary
+create_tags
+create_threat_scenarios
+create_ttrc_graph
+create_ttrc_narrative
+create_upgrade_pack
+create_user_story
+create_video_chapters
+create_visualization
+dialog_with_socrates
+explain_code
+explain_docs
+explain_math
+explain_project
+explain_terms
+export_data_as_csv
+extract_algorithm_update_recommendations
+extract_article_wisdom
+extract_book_ideas
+extract_book_recommendations
+extract_business_ideas
+extract_controversial_ideas
+extract_core_message
+extract_ctf_writeup
+extract_extraordinary_claims
+extract_ideas
+extract_insights
+extract_insights_dm
+extract_instructions
+extract_jokes
+extract_latest_video
+extract_main_idea
+extract_most_redeeming_thing
+extract_patterns
+extract_poc
+extract_predictions
+extract_primary_problem
+extract_primary_solution
+extract_product_features
+extract_questions
+extract_recipe
+extract_recommendations
+extract_references
+extract_skills
+extract_song_meaning
+extract_sponsors
+extract_videoid
+extract_wisdom
+extract_wisdom_agents
+extract_wisdom_dm
+extract_wisdom_nometa
+find_hidden_message
+find_logical_fallacies
+get_wow_per_minute
+get_youtube_rss
+identify_dsrp_distinctions
+identify_dsrp_perspectives
+identify_dsrp_relationships
+identify_dsrp_systems
+identify_job_stories
+improve_academic_writing
+improve_prompt
+improve_report_finding
+improve_writing
+label_and_rate
+md_callout
+official_pattern_template
+prepare_7s_strategy
+provide_guidance
+rate_ai_response
+rate_ai_result
+rate_content
+rate_value
+raw_query
+raycast
+recommend_artists
+recommend_pipeline_upgrades
+recommend_talkpanel_topics
+refine_design_document
+review_design
+show_fabric_options_markmap
+solve_with_cot
+suggest_pattern
+summarize
+summarize_debate
+summarize_git_changes
+summarize_git_diff
+summarize_lecture
+summarize_legislation
+summarize_meeting
+summarize_micro
+summarize_newsletter
+summarize_paper
+summarize_prompt
+summarize_pull-requests
+summarize_rpg_session
+to_flashcards
+transcribe_minutes
+translate
+tweet
+write_essay
+write_hackerone_report
+write_latex
+write_micro_essay
+write_nuclei_template_rule
+write_pull-request
+write_semgrep_rule

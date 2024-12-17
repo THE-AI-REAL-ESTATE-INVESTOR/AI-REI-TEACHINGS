@@ -1,0 +1,141 @@
+ airie-teachings git:(main) ✗ fabric -y "https://youtu.be/UbDyjIIGaxQ\?si\=jmBrn0WWmLFQ-cTI" --pattern extract_wisdom
+> ~/Desktop/airie-teachings/videos 
+```markdown
+## SUMMARY
+The video discusses Fabric, an open-source AI tool created by Daniel Misler, designed to augment human capabilities by reducing friction in using AI.
+
+## IDEAS
+- Fabric aims to augment humans with AI, reducing friction in problem-solving.
+- Fabric is an open-source, command-line interface tool for integrating AI into workflows.
+- Fabric uses "patterns," curated prompts to extract insights from text.
+- Patterns are open-sourced, crowdsourced, and continually improved by users.
+- Fabric allows users to see and modify system prompts for better AI interaction.
+- Patterns mimic human-like interaction with AI for improved responses.
+- Fabric's CLI-native design reduces time spent accessing AI tools.
+- Fabric supports multiple interfaces, including voice and GUI apps.
+- Users can create custom patterns to solve specific problems.
+- Fabric acts as an AI framework, not an AI itself, relying on external models.
+- Users need API keys for OpenAI, Anthropic, or local models.
+- Fabric supports local LLMs, providing cost-effective AI solutions.
+- Fabric enables remote AI server access via tools like TwinGate.
+- Fabric patterns can be stitched together for complex tasks.
+- Fabric allows users to save AI outputs directly to note-taking apps like Obsidian.
+- Fabric supports text-based manipulation, emphasizing a "world of text."
+- Fabric encourages capturing ideas as text for easy manipulation.
+- Fabric is designed for human flourishing by optimizing content consumption.
+- Fabric helps users prioritize content worth deep engagement.
+- Fabric's creator, Daniel Misler, emphasizes AI's role in human augmentation.
+- Fabric can filter content, highlighting what's worth full attention.
+- Fabric's patterns are results of iterative refinement for quality outputs.
+- Users can record and transcribe conversations for analysis with Fabric.
+- Fabric's development aligns with aiding human transition to "Human 3.0."
+- Fabric supports creating a feedback loop for personal development.
+- Fabric enables analyzing personal data for insights into habits and moods.
+- The tool is part of a broader philosophy to enhance human capabilities.
+- Fabric's creator values context definition for personalized AI interaction.
+- Fabric's open-source nature encourages collaboration and innovation.
+- Fabric's patterns are akin to solving puzzles for specific tasks.
+- Fabric's integration with Obsidian enhances note-taking and information management.
+- Fabric's CLI integration suits users comfortable with command-line environments.
+
+## INSIGHTS
+- Fabric reduces AI interaction friction, enhancing problem-solving efficiency for users.
+- Open-source patterns allow users to see and refine AI interaction prompts.
+- Fabric's design encourages AI as a tool for human augmentation, not replacement.
+- Patterns reflect iterative design, ensuring high-quality AI interactions.
+- Fabric's CLI-native approach streamlines AI tool access, saving user time.
+- Users can craft custom patterns, tailoring AI to specific personal needs.
+- Fabric's text-centric approach facilitates seamless integration with various tools.
+- Patterns mimic human thought processes, enhancing AI responses.
+- Fabric aids in filtering valuable content, optimizing user attention and learning.
+- Collaboration in pattern development leads to continuous improvement and innovation.
+
+## QUOTES
+- "The goal is to augment humans with AI, reducing friction to solve problems."
+- "Fabric is all about reducing friction to have AI help you solve problems."
+- "It's open-source, so you can actually see this system prompt."
+- "Talking to these AI like they're humans elicits a better response."
+- "The main thrust to this project is to collect problems and solutions in the form of patterns."
+- "Fabric's CLI-native design allows everything here in the CLI."
+- "I capture a concept or a structure for an essay immediately in a note."
+- "Fabric enables remote AI server access via tools like TwinGate."
+- "I'm using it to determine what I should go watch."
+- "Fabric's development is about increasing human flourishing by helping people."
+- "It's not about replacing humans but about augmenting humans to help us become better."
+- "Fabric allows users to see and modify system prompts for better AI interaction."
+- "Patterns are open-sourced, crowdsourced, and continually improved by users."
+- "Fabric emphasizes a world of text, getting everything into a text format."
+- "Patterns mimic human-like interaction with AI for improved responses."
+- "Users need API keys for OpenAI, Anthropic, or local models."
+- "Fabric patterns can be stitched together for complex tasks."
+- "Fabric supports creating a feedback loop for personal development."
+- "Fabric's integration with Obsidian enhances note-taking and information management."
+- "Fabric's creator, Daniel Misler, emphasizes AI's role in human augmentation."
+
+## HABITS
+- Capture ideas immediately in text for future manipulation.
+- Record and transcribe conversations for detailed analysis and insights.
+- Use CLI tools to streamline workflows and reduce time spent on repetitive tasks.
+- Regularly update and refine AI interaction patterns for continuous improvement.
+- Integrate AI tools into daily routines for enhanced productivity.
+- Prioritize content worth deep engagement using AI filters.
+- Create custom patterns for specific personal and professional needs.
+- Utilize open-source tools to collaborate and innovate with a broader community.
+- Analyze personal data to uncover insights into habits and mood patterns.
+- Implement feedback loops to monitor and improve personal development.
+- Embrace a text-centric approach for managing and manipulating information.
+- Use AI tools to augment human capabilities, not replace them.
+- Define personal context for tailored AI interactions.
+- Collaborate on pattern development for shared knowledge and innovation.
+- Utilize remote access solutions for seamless AI tool integration.
+
+## FACTS
+- Fabric is an open-source AI tool designed to augment human capabilities.
+- Fabric supports multiple AI models, including OpenAI and Anthropic.
+- Fabric's CLI-native design reduces time spent accessing AI tools.
+- Patterns in Fabric are open-sourced and crowdsourced for continuous improvement.
+- Users can create custom patterns to solve specific problems with Fabric.
+- Fabric supports local LLMs, providing cost-effective AI solutions.
+- Remote AI server access is possible with tools like TwinGate.
+- Fabric emphasizes a "world of text," facilitating seamless integration.
+- Patterns are iteratively refined for quality AI interactions.
+- Fabric aids in filtering valuable content for optimized user attention.
+- Fabric's development aligns with aiding human transition to "Human 3.0."
+- Users need API keys for accessing various AI models in Fabric.
+- Fabric's integration with Obsidian enhances note-taking capabilities.
+- Fabric's patterns mimic human-like interaction with AI for improved responses.
+- Fabric's creator, Daniel Misler, emphasizes AI's role in human augmentation.
+
+## REFERENCES
+- Fabric by Daniel Misler
+- Strava app
+- Notion
+- Obsidian
+- TwinGate
+- OpenAI
+- Anthropic
+- LLaMA models
+- Whisper AI
+- David Allen's "Getting Things Done"
+
+## ONE-SENTENCE TAKEAWAY
+Fabric is an open-source AI tool enhancing human capabilities by reducing friction in AI problem-solving.
+
+## RECOMMENDATIONS
+- Use Fabric to streamline AI interactions and improve problem-solving efficiency.
+- Explore open-source patterns to refine AI interaction and enhance responses.
+- Create custom patterns for tailored AI solutions to specific needs.
+- Integrate Fabric with note-taking apps for seamless information management.
+- Use Fabric to filter content, optimizing attention on valuable information.
+- Leverage Fabric's CLI-native design for efficient AI tool access.
+- Collaborate on pattern development for shared innovation and improvement.
+- Analyze personal data with Fabric for insights into habits and mood patterns.
+- Implement feedback loops to monitor and enhance personal development.
+- Embrace a text-centric approach for managing and manipulating information.
+- Use remote access solutions for seamless AI tool integration.
+- Regularly update and refine AI patterns for continuous improvement.
+- Capture ideas immediately in text for future manipulation and analysis.
+- Utilize AI tools like Fabric to augment human capabilities, not replace them.
+- Define personal context for tailored AI interactions and better outcomes.
+```
+zsh: is a directory: /Users/markcarpenter/Desktop/airie-teachings/videos
