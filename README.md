@@ -1,7 +1,8 @@
 
 ## Lesson 1 Outline: Introduction to Fabric & How to Use Patterns (for Beginners)
 
-FROM www.theairealestateinvestor.com
+FROM [theairealestateinvestor.com](https://www.theairealestateinvestor.com)
+
 ---
 
 ### **1. Welcome & What You’ll Learn (2 mins)**  
