@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The AI Real Estate Investor</title>
+    <title>The AI Real Estate Investor </title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -106,7 +106,7 @@
         <ol>
             <li><strong>Sign up for our free newsletter</strong> to get early access and updates: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiGKO0AndxzwfhTPv2k34JueALQ6A0k636-3z1GiejB3QO4Q/viewform">Join Now</a></li>
             <li><strong>Join our Facebook Community</strong> for ongoing support and live Q&A sessions: <a href="https://www.facebook.com/aireinvestor">Facebook Group</a></li>
-            <li><strong>Check out our website</strong> for more resources: <a href="https://theaireinvestor.com">TheAIREInvestor.com</a></li>
+            <li><strong>Check out our website</strong> for more resources: <a href="https://aireinvestor.com">TheAIREInvestor.com</a></li>
         </ol>
 
         <h2>Your Next Step Starts Here</h2>
@@ -115,4 +115,6 @@
     </div>
 </body>
 </html>
+
+=======
 
