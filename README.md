@@ -1,8 +1,15 @@
 # AIRIE-TEACHING-DEV
 
 ## Repository Structure
-- **web branch**: Development branch containing all content and development tools
-- **main branch**: Public branch containing only the public-facing content
+- **web branch**: Public branch containing the live website content
+  - Hosted at [learn.aireinvestor.com](https://learn.aireinvestor.com)
+  - Contains only public-facing content
+  - Will be auto-populated from private repo
+  - Managed through GitHub Pages
+- **main branch**: Private development branch
+  - Contains development tools and internal content
+  - Used for development and automation
+  - Will be linked to private repo ([AIrie-teachings-dev](https://github.com/THE-AI-REAL-ESTATE-INVESTOR/AIrie-teachings-dev)) - [freeblog.aireinvestor.com](https://freeblog.aireinvestor.com)
 - **PENDING/Wisdom**: Documentation and reference materials for internal use
 - **docs/**: Website files for GitHub Pages
   - **CNAME**: Custom domain configuration
@@ -12,7 +19,7 @@
     - Automatically rendered by GitHub Pages
     - Organized by topic and difficulty level
 - **utils/**: Development tools and automation scripts
-  - Contains development-only tools (not merged to main)
+  - Contains development-only tools
   - Includes merge automation scripts
   - Development utilities
 
@@ -21,37 +28,47 @@
 ### Branch Structure
 ```mermaid
 graph TD
-    subgraph Development[Development Branch - web]
-        A1[Content Development]
-        A2[Development Tools]
-        A3[Internal Docs]
+    subgraph Private[Private Development - AIrie-teachings-dev]
+        A1[Development Tools]
+        A2[Internal Docs]
+        A3[Automation Scripts]
     end
 
-    subgraph Production[Production Branch - main]
-        B1[Public Content]
-        B2[Website Files]
+    subgraph Public[Public Website - AI-REI-TEACHINGS]  
+        B1[Public Content] -->|learn.aireinvestor.com| B4[Lead Magnet]
+        B2[Learning Resources] -->|/learn| B4
+        B3[Website Files] -->|GitHub Pages| B4
     end
 
-    A1 -->|Merged| B1
-    A2 -->|Not Merged| B1
-    A3 -->|Not Merged| B1
+    subgraph External[External Integration]
+        C1[freeblog.aireinvestor.com]
+        C2[AI & Automation]
+    end
+
+    A1 -->|Development| C1
+    A2 -->|Reference| C1
+    A3 -->|Automation| C1
+    C1 -->|Auto-Populate| B1
+    C1 -->|Auto-Populate| B2
+    C1 -->|Auto-Populate| B3
 ```
 
 ### Content Flow
+
 1. **Development**:
-   - All development happens in the `web` branch
-   - Development tools stay in `web` branch
+   - All development happens in the `main` branch
+   - Development tools stay in `main` branch
    - Content is organized in `docs/` directory
 
 2. **Deployment**:
-   - Content is merged from `web` to `main`
+   - Content is merged from `main` to `web`
    - Development tools are excluded via `.gitignore`
-   - Main branch contains only public content
+   - Web branch contains only public content
 
 3. **Automation**:
-   - Merge process is automated via `utils/merge-to-main.sh`
-   - Script remains in `web` branch only
-   - Handles safe merging of content
+   - Private repo ([AIrie-teachings-dev](https://github.com/THE-AI-REAL-ESTATE-INVESTOR/AIrie-teachings-dev)) handles content generation
+   - AI & Automation tools manage content updates
+   - Auto-populates the public web branch
 
 ## Learning Section Structure
 The learning section is built using GitHub Pages' built-in Markdown rendering capabilities:
@@ -67,10 +84,9 @@ The learning section is built using GitHub Pages' built-in Markdown rendering ca
    - Easy to add new content by adding Markdown files
 
 3. **Adding Content**:
-   - Simply add new `.md` files to `docs/learn/`
-   - Use standard Markdown formatting
-   - Include proper headers and structure
-   - GitHub Pages handles the rendering
+   - Content is managed through private repo
+   - AI tools handle content generation
+   - Automated deployment to public branch
 
 4. **Best Practices**:
    - Keep filenames lowercase with hyphens
@@ -80,9 +96,9 @@ The learning section is built using GitHub Pages' built-in Markdown rendering ca
 
 ## Development Tools
 - **Merge Script**: Located in `utils/merge-to-main.sh`
-  - Automates merging from `web` to `main`
+  - Automates merging from `main` to `web`
   - Includes safety checks and validations
-  - Stays in `web` branch only
+  - Stays in `main` branch only
   - Not merged to public content
 
 ## Environment Configuration
@@ -93,10 +109,10 @@ The learning section is built using GitHub Pages' built-in Markdown rendering ca
 
 ## Getting Started
 1. Clone the repository
-2. Switch to `web` branch for development
+2. Switch to `main` branch for development
 3. Make changes in `docs/` directory
-4. Use merge script to deploy to `main`
-5. GitHub Pages automatically deploys from `main`
+4. Use merge script to deploy to `web`
+5. GitHub Pages automatically deploys from `web`
 
 ---
 *Last updated: March 2024*
