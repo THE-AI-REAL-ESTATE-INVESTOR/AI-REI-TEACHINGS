@@ -1,3 +1,10 @@
+---
+layout: default
+title: Fabric AI Patterns
+author: AI REI Teachings
+date: March 2024
+---
+
 # AI Learning Resources
 
 Welcome to our comprehensive collection of AI learning resources. Whether you're just starting out or looking to deepen your knowledge, we've got you covered.
@@ -32,3 +39,18 @@ Help us improve! Share your thoughts through our [feedback form](https://freeblo
 
 ---
 *Last updated: March 2024* 
+
+## Attribution
+This content is based on and inspired by:
+- Fabric AI Documentation (https://github.com/danielmiessler/fabric)
+- Daniel Miessler's Work (https://danielmiessler.com)
+
+## License
+This content is licensed under MIT and includes modifications and additions by AI REI Teachings.
+
+---
+*Last updated: March 2024*
+
+## Navigation
+- [Back to Learning Hub](../index.md)
+- [Back to Main Site](/)

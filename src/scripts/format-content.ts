@@ -14,13 +14,14 @@ function formatContent(filePath: string, metadata: ContentMetadata) {
   const content = fs.readFileSync(filePath, 'utf-8');
   const fileName = path.basename(filePath, '.md');
   
-  // Create formatted content
-  const formattedContent = `# ${metadata.title}
+  // Create formatted content with Jekyll front matter
+  const formattedContent = `---
+layout: default
+title: ${metadata.title}
+author: ${metadata.author}
+date: ${metadata.date}
+---
 
-## Overview
-${content.split('\n')[0] || 'Overview of the content'}
-
-## Content
 ${content}
 
 ## Attribution
@@ -34,21 +35,13 @@ ${metadata.license}
 *Last updated: ${metadata.date}*
 
 ## Navigation
-- [Back to Fabric AI Learning Hub](./index.md)
-- [Back to AI Learning Hub](../index.md)
-- [Back to Main Learning Hub](../../index.md)
+- [Back to Learning Hub](../index.md)
+- [Back to Main Site](/)
 `;
 
-  // Create Fabric-AI directory if it doesn't exist
-  const fabricAIDir = path.join(path.dirname(filePath), 'AI', 'Fabric-AI');
-  if (!fs.existsSync(fabricAIDir)) {
-    fs.mkdirSync(fabricAIDir, { recursive: true });
-  }
-
-  // Write formatted content
-  const newPath = path.join(fabricAIDir, fileName + '.md');
-  fs.writeFileSync(newPath, formattedContent);
-  console.log(`Formatted content saved to: ${newPath}`);
+  // Write formatted content back to the same file
+  fs.writeFileSync(filePath, formattedContent);
+  console.log(`Formatted content saved to: ${filePath}`);
 }
 
 // Example usage

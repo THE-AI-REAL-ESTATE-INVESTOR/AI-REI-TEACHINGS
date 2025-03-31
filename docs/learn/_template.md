@@ -1,3 +1,10 @@
+---
+layout: default
+title: Fabric AI Patterns
+author: AI REI Teachings
+date: March 2024
+---
+
 # [Page Title]
 
 ## Overview
@@ -45,3 +52,18 @@ Found this helpful? [Link to feedback form]
 
 ---
 *Last updated: [Date]* 
+
+## Attribution
+This content is based on and inspired by:
+- Fabric AI Documentation (https://github.com/danielmiessler/fabric)
+- Daniel Miessler's Work (https://danielmiessler.com)
+
+## License
+This content is licensed under MIT and includes modifications and additions by AI REI Teachings.
+
+---
+*Last updated: March 2024*
+
+## Navigation
+- [Back to Learning Hub](../index.md)
+- [Back to Main Site](/)
