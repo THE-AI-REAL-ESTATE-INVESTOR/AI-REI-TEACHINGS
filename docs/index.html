@@ -1,3 +1,6 @@
+---
+layout: none
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,26 +85,36 @@
             display: none;
             position: absolute;
             background: var(--nav-bg);
-            min-width: 200px;
+            min-width: 250px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
             z-index: 1;
             border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
+            transform: translateY(0);
+            opacity: 1;
         }
 
         .dropdown-content a {
             color: var(--text-color);
-            padding: 12px 16px;
+            padding: 12px 20px;
             text-decoration: none;
             display: block;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
         }
 
         .dropdown-content a:hover {
             background-color: var(--nav-hover);
             color: var(--primary-color);
+            padding-left: 25px;
         }
 
         .container {
@@ -216,17 +229,20 @@
     <nav class="nav-container">
         <div class="nav-menu">
             <div class="nav-links">
-                <a href="/">Home</a>
-                <div class="dropdown">
-                    <a href="/learn">Learning Resources</a>
-                    <div class="dropdown-content">
-                        <a href="/learn/basic-options-switches.md">Basic Options & Switches</a>
-                        <a href="/learn/options.md">Advanced Options Guide</a>
-                        <a href="/learn/patterns.md">AI Patterns & Best Practices</a>
-                    </div>
-                </div>
-                <a href="https://freeblog.aireinvestor.com/newsletter">Newsletter</a>
-                <a href="https://freeblog.aireinvestor.com/podcast">Podcast</a>
+                {% for item in site.navigation %}
+                    {% if item.subitems %}
+                        <div class="dropdown">
+                            <a href="{{ item.url }}">{{ item.title }}</a>
+                            <div class="dropdown-content">
+                                {% for subitem in item.subitems %}
+                                    <a href="{{ subitem.url }}">{{ subitem.title }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </nav>
