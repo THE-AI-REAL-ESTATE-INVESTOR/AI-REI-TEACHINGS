@@ -1,116 +1,316 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The AI Real Estate Investor </title>
+    <title>AI Learning Hub - The AI Real Estate Investor</title>
     <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #0056b3;
+            --background-color: #f4f4f9;
+            --text-color: #333;
+            --card-bg: #fff;
+            --nav-bg: #fff;
+            --nav-hover: #f0f0f0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
+
+        .nav-container {
+            background: var(--nav-bg);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-menu {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 15px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: var(--nav-bg);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--nav-hover);
+            color: var(--primary-color);
+        }
+
         .container {
             width: 90%;
+            max-width: 1200px;
             margin: auto;
-            overflow: hidden;
             padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        h1, h2, h3 {
-            color: #555;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .cta {
-            margin: 20px 0;
-        }
-        .cta a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .cta a:hover {
-            background: #0056b3;
-        }
-        .logo {
+
+        .header {
             text-align: center;
-            margin-bottom: 20px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 40px;
         }
-        .logo img {
+
+        .logo {
             max-width: 200px;
             height: auto;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+        }
+
+        .learning-section {
+            margin: 40px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <nav class="nav-container">
+        <div class="nav-menu">
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <div class="dropdown">
+                    <a href="/learn">Learning Resources</a>
+                    <div class="dropdown-content">
+                        <a href="/learn/basic-options-switches.md">Basic Options & Switches</a>
+                        <a href="/learn/options.md">Advanced Options Guide</a>
+                        <a href="/learn/patterns.md">AI Patterns & Best Practices</a>
+                    </div>
+                </div>
+                <a href="https://freeblog.aireinvestor.com/newsletter">Newsletter</a>
+                <a href="https://freeblog.aireinvestor.com/podcast">Podcast</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/4dgRQSZuc9AztQgaeErm/media/661040489b8fa9eea512cc9e.png" alt="The AI Real Estate Investor Logo" class="logo">
+        <h1>AI Learning Hub</h1>
+        <p>Empowering Business Owners with AI Knowledge</p>
+    </div>
+
     <div class="container">
-        <div class="logo">
-            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/4dgRQSZuc9AztQgaeErm/media/661040489b8fa9eea512cc9e.png" alt="The AI Real Estate Investor Logo">
-        </div>
-        <h1>Welcome to The AI Real Estate Investor: Teaching AI for Business Owners!</h1>
-        <p>Are you ready to transform your business and your life?</p>
-
-        <p>Imagine harnessing the power of artificial intelligence to automate tasks, optimize your processes, and scale your efforts faster than ever before. Whether you’re brand new to AI or already exploring its potential, <strong>The AI Real Estate Investor</strong> is here to guide you every step of the way—for FREE.</p>
-
-        <h2>What Is The AI Real Estate Investor Teaching Platform?</h2>
-
-        <p>Our mission is simple:</p>
-        <p>We want to <strong>empower entrepreneurs</strong> and <strong>business owners like you</strong> with the knowledge, tools, and strategies to integrate AI into your daily operations. We remove the complexity and pain from learning and implementing AI by breaking it down into practical, actionable lessons.</p>
-
-        <p>Here’s what you can expect:</p>
-        <ul>
-            <li><strong>Step-by-step guidance</strong> on AI tools like ChatGPT, automation workflows, and more.</li>
-            <li><strong>Custom strategies</strong> tailored to your business goals.</li>
-            <li>A <strong>community of like-minded entrepreneurs</strong> ready to share tips, tricks, and support.</li>
-        </ul>
-
-        <p><strong>And the best part?</strong> It’s all free to learn how to use AI to level up your business.</p>
-
-        <h2>Coming Soon: Auto Blog Poster Tool</h2>
-
-        <p>We’re thrilled to announce our upcoming tool: <strong>The Auto Blog Poster</strong>—a game-changer designed to help business owners create content seamlessly. Launching January 10th on <strong>TheAIREInvestor.com</strong>, this tool integrates with your data to generate personalized, engaging blog posts.</p>
-
-        <p><strong>Be one of the first 100 people</strong> to access it for FREE—no strings attached!</p>
-
-        <div class="cta">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiGKO0AndxzwfhTPv2k34JueALQ6A0k636-3z1GiejB3QO4Q/viewform">Sign up for early access</a>
+        <div class="card">
+            <h2>Our Mission</h2>
+            <p>We democratize access to advanced AI technologies, enabling businesses to innovate, optimize operations, and drive sustainable growth. Our goal is to make AI accessible, understandable, and actionable for businesses without requiring costly infrastructures or specialized expertise.</p>
         </div>
 
-        <h2>Why Join Us?</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">$407B</div>
+                <p>Expected AI Market by 2027</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8.4B</div>
+                <p>AI Assistants Projected Globally</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$15.7T</div>
+                <p>Expected Global Economic Impact</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2045</div>
+                <p>AI Intelligence Milestone</p>
+            </div>
+        </div>
 
-        <p>Over the past year, I’ve tested, failed, learned, and succeeded—so you don’t have to.</p>
+        <div class="card">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Innovation</h3>
+                    <p>Pushing boundaries in AI technology</p>
+                </div>
+                <div class="value-item">
+                    <h3>Integrity</h3>
+                    <p>Ethical AI practices</p>
+                </div>
+                <div class="value-item">
+                    <h3>Customer Focus</h3>
+                    <p>Tailored solutions for your needs</p>
+                </div>
+                <div class="value-item">
+                    <h3>Collaboration</h3>
+                    <p>Working together for success</p>
+                </div>
+            </div>
+        </div>
 
-        <p>As a real estate investor and entrepreneur, I know how overwhelming it can be to juggle tasks and stay competitive. Incorporating AI has been a <strong>game-changer</strong> in my own journey. It’s saved me time, money, and endless frustration. Now, I’m sharing everything I’ve learned so you can skip the pain and fast-track your success.</p>
+        <div class="learning-section">
+            <h2>Learning Resources</h2>
+            <div class="card">
+                <h3>Getting Started with AI</h3>
+                <ul>
+                    <li><a href="learn/basic-options-switches.md">Basic Options & Switches</a></li>
+                    <li><a href="learn/options.md">Advanced Options Guide</a></li>
+                    <li><a href="learn/patterns.md">AI Patterns & Best Practices</a></li>
+                </ul>
+                <a href="learn/" class="cta-button">View All Learning Resources</a>
+            </div>
+        </div>
 
-        <p>You’ll gain:</p>
-        <ul>
-            <li><strong>Insider strategies</strong> from someone who’s been in your shoes.</li>
-            <li><strong>Real-world examples</strong> of how AI can solve your daily challenges.</li>
-            <li>Access to <strong>tools, guides, and exclusive tips</strong> I wish I had when I started.</li>
-        </ul>
+        <div class="card">
+            <h2>Join Our Community</h2>
+            <p>Connect with like-minded entrepreneurs and learn together:</p>
+            <div style="margin: 20px 0;">
+                <a href="https://a-irie-teachings-dev.vercel.app/newsletter" class="cta-button">Sign Up for Newsletter</a>
+                <a href="https://www.facebook.com/aireinvestor" class="cta-button" style="margin-left: 10px;">Join Facebook Group</a>
+            </div>
+        </div>
 
-        <h2>Take Action Today:</h2>
-        <ol>
-            <li><strong>Sign up for our free newsletter</strong> to get early access and updates: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiGKO0AndxzwfhTPv2k34JueALQ6A0k636-3z1GiejB3QO4Q/viewform">Join Now</a></li>
-            <li><strong>Join our Facebook Community</strong> for ongoing support and live Q&A sessions: <a href="https://www.facebook.com/aireinvestor">Facebook Group</a></li>
-            <li><strong>Check out our website</strong> for more resources: <a href="https://aireinvestor.com">TheAIREInvestor.com</a></li>
-        </ol>
-
-        <h2>Your Next Step Starts Here</h2>
-
-        <p>AI is no longer just for tech giants. It’s for every entrepreneur who’s ready to work smarter, not harder. Let’s build something incredible together.</p>
+        <div class="card">
+            <h2>Coming Soon: Auto Blog Poster Tool</h2>
+            <p>Be among the first 100 users to access our revolutionary AI-powered blog creation tool for FREE!</p>
+            <a href="https://freeblog.aireinvestor.com" class="cta-button">Get Early Access</a>
+        </div>
     </div>
 </body>
 </html>
