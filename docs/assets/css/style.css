@@ -233,4 +233,113 @@ footer {
 
 .markdown-content a:hover {
     text-decoration: underline;
+}
+
+/* Linux Cheats Styles */
+.linux-cheats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.aire-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.aire-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.aire-links a:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.easter-egg {
+    cursor: help;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.easter-egg:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.loading-spinner::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 0.5rem;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error {
+    padding: 1rem;
+    background-color: #fee;
+    color: #c00;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+/* Linux Cheats Content Styles */
+.content-body {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content-body h2 {
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content-body pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.content-body code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
 } 

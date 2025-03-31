@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<div class="linux-cheats-container">
+    <div class="content-header">
+        <h1>{{ page.title }}</h1>
+        <div class="aire-links">
+            <a href="https://www.theairealestateinvestor.com" target="_blank">🌟 Join Our AI Community</a>
+            <a href="https://www.facebook.com/aireinvestor" target="_blank">📱 Follow Us</a>
+            <span class="easter-egg" title="You found an easter egg! Use code LINUX23 for 20% off our AI Revolutionaries Club">🎁</span>
+        </div>
+    </div>
+
+    <div id="linux-cheats-content" class="content-body">
+        <div class="loading-spinner">Loading content...</div>
+    </div>
+
+    {{ content }}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const contentDiv = document.getElementById('linux-cheats-content');
+            const owner = 'Mark0025';
+            const repo = 'Linux-cheats';
+            const path = 'src/linux_cheats_cli/public/templates/index.html';
+
+            try {
+                // Fetch content from GitHub API
+                const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`);
+                const data = await response.json();
+                
+                if (data.content) {
+                    // Decode base64 content
+                    const content = atob(data.content);
+                    
+                    // Parse and extract relevant content
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(content, 'text/html');
+                    
+                    // Remove loading spinner
+                    contentDiv.querySelector('.loading-spinner').remove();
+                    
+                    // Add the content
+                    contentDiv.innerHTML = content;
+                }
+            } catch (error) {
+                contentDiv.innerHTML = `<div class="error">Failed to load content. Please try again later.</div>`;
+                console.error('Error loading content:', error);
+            }
+        });
+    </script>
+</div> 
