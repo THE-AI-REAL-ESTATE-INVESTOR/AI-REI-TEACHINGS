@@ -342,4 +342,131 @@ footer {
     background-color: #f8f9fa;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
+}
+
+/* Linux Cheats Enhanced Styles */
+.linux-cheats-section {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+.linux-cheats-section pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.linux-cheats-section code {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.linux-cheats-section h2 {
+    color: #2c3e50;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.linux-cheats-section h3 {
+    color: #34495e;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.linux-cheats-section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.linux-cheats-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.linux-cheats-section li {
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.linux-cheats-section li:last-child {
+    border-bottom: none;
+}
+
+.linux-cheats-section .command {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+}
+
+.linux-cheats-section .command::before {
+    content: "$";
+    color: #3498db;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.linux-cheats-section .note {
+    background: #fff8dc;
+    padding: 1rem;
+    border-left: 4px solid #f1c40f;
+    margin: 1rem 0;
+}
+
+.linux-cheats-section .tip {
+    background: #e8f6f3;
+    padding: 1rem;
+    border-left: 4px solid #1abc9c;
+    margin: 1rem 0;
+}
+
+/* Loading spinner enhancements */
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.loading-spinner::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 1rem;
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+/* Error message styling */
+.error {
+    background-color: #fee;
+    color: #c00;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.error h3 {
+    margin-bottom: 1rem;
+    color: #c00;
+}
+
+.error a {
+    color: #c00;
+    text-decoration: underline;
 } 
