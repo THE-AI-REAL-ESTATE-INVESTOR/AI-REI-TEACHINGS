@@ -1,0 +1,15 @@
+# Development tools (only in main branch)
+/main/utils/merge-to-main.sh
+
+# Environment files
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
