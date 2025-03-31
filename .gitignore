@@ -1,15 +1,43 @@
-# Development tools (only in main branch)
-/main/utils/merge-to-main.sh
+# Dependencies
+node_modules/
+.pnpm-store/
 
-# Environment files
+# Build outputs
+dist/
+build/
+out/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment variables
 .env
+.env.local
+.env.*.local
 
-# IDE files
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS files
 .DS_Store
-Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache directories
+.npm/
+.eslintcache
+.cache/
+
+# Test coverage
+coverage/
+
+# Misc
+.tmp/
+.temp/
