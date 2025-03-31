@@ -1,15 +1,57 @@
 # AIRIE-TEACHING-DEV
 
-## Directories
-- **PENDING/Wisdom**: Documentation and reference materials for internal use.
-- **docs/**: Website files for GitHub Pages.
-  - **CNAME**: Custom domain configuration.
-  - **index.html**: Main entry point for the website.
-  - **learn/**: Learning resources and tutorials.
+## Repository Structure
+- **web branch**: Development branch containing all content and development tools
+- **main branch**: Public branch containing only the public-facing content
+- **PENDING/Wisdom**: Documentation and reference materials for internal use
+- **docs/**: Website files for GitHub Pages
+  - **CNAME**: Custom domain configuration
+  - **index.html**: Main entry point for the website
+  - **learn/**: Learning resources and tutorials
     - Markdown files for easy content management
     - Automatically rendered by GitHub Pages
     - Organized by topic and difficulty level
-- **utils/**: Utility scripts and tools for automation.
+- **utils/**: Development tools and automation scripts
+  - Contains development-only tools (not merged to main)
+  - Includes merge automation scripts
+  - Development utilities
+
+## Development Workflow
+
+### Branch Structure
+```mermaid
+graph TD
+    subgraph Development[Development Branch - web]
+        A1[Content Development]
+        A2[Development Tools]
+        A3[Internal Docs]
+    end
+
+    subgraph Production[Production Branch - main]
+        B1[Public Content]
+        B2[Website Files]
+    end
+
+    A1 -->|Merged| B1
+    A2 -->|Not Merged| B1
+    A3 -->|Not Merged| B1
+```
+
+### Content Flow
+1. **Development**:
+   - All development happens in the `web` branch
+   - Development tools stay in `web` branch
+   - Content is organized in `docs/` directory
+
+2. **Deployment**:
+   - Content is merged from `web` to `main`
+   - Development tools are excluded via `.gitignore`
+   - Main branch contains only public content
+
+3. **Automation**:
+   - Merge process is automated via `utils/merge-to-main.sh`
+   - Script remains in `web` branch only
+   - Handles safe merging of content
 
 ## Learning Section Structure
 The learning section is built using GitHub Pages' built-in Markdown rendering capabilities:
@@ -36,21 +78,25 @@ The learning section is built using GitHub Pages' built-in Markdown rendering ca
    - Include proper Markdown headers
    - Add links in `index.html` for new content
 
-graph TD
-    subgraph Local[Local Repository]
-        A1[web branch]
-        A2[PENDING/Wisdom]
-        A3[docs directory]
-        A4[utils directory]
-        A5[learn directory]
-    end
+## Development Tools
+- **Merge Script**: Located in `utils/merge-to-main.sh`
+  - Automates merging from `web` to `main`
+  - Includes safety checks and validations
+  - Stays in `web` branch only
+  - Not merged to public content
 
-    subgraph Remote
-        B1[origin DEV]
-        B2[public Teachings]
-    end
+## Environment Configuration
+- `.env` file contains configuration for:
+  - URLs and endpoints
+  - Development paths
+  - Not merged to public content
 
-    A1 -->|Production Updates| B2
-    A4 -->|Automation Scripts| A3
-    A2 -->|Reference Materials| A3
-    A5 -->|Learning Content| A3
+## Getting Started
+1. Clone the repository
+2. Switch to `web` branch for development
+3. Make changes in `docs/` directory
+4. Use merge script to deploy to `main`
+5. GitHub Pages automatically deploys from `main`
+
+---
+*Last updated: March 2024*
