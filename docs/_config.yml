@@ -36,4 +36,28 @@ plugins:
 
 relative_links:
   enabled: true
-  collections: true 
+  collections: true
+
+# Navigation Structure
+navigation:
+  - title: Home
+    url: /
+  - title: Learning Resources
+    url: /learn
+    subitems:
+      - title: AI Patterns & Best Practices
+        url: /learn/patterns
+      - title: Basic Options & Switches
+        url: /learn/basic-options-switches
+      - title: Advanced Options Guide
+        url: /learn/options
+  - title: Newsletter
+    url: https://freeblog.aireinvestor.com/newsletter
+  - title: Podcast
+    url: https://freeblog.aireinvestor.com/podcast
+
+# Collections
+collections:
+  learn:
+    output: true
+    permalink: /learn/:path/ 

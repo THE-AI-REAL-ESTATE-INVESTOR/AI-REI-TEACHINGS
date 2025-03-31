@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - {{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
     <nav class="nav-container">
         <div class="nav-menu">
             <div class="nav-links">
-                <a href="/">Home</a>
-                <div class="dropdown">
-                    <a href="/learn">Learning Resources</a>
-                    <div class="dropdown-content">
-                        <a href="/learn/basic-options-switches">Basic Options & Switches</a>
-                        <a href="/learn/options">Advanced Options Guide</a>
-                        <a href="/learn/patterns">AI Patterns & Best Practices</a>
-                    </div>
-                </div>
-                <a href="https://freeblog.aireinvestor.com/newsletter">Newsletter</a>
-                <a href="https://freeblog.aireinvestor.com/podcast">Podcast</a>
+                {% for item in site.navigation %}
+                    {% if item.subitems %}
+                        <div class="dropdown">
+                            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                            <div class="dropdown-content">
+                                {% for subitem in item.subitems %}
+                                    <a href="{{ subitem.url | relative_url }}">{{ subitem.title }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </nav>
 
     <div class="content-container">
         <article class="markdown-content">
+            {% if page.title %}
+                <h1>{{ page.title }}</h1>
+            {% endif %}
             {{ content }}
         </article>
     </div>
