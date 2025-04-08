@@ -1,72 +1,67 @@
 import dotenv from 'dotenv';
-import path from 'path';
 
 // Load environment variables from .env file
 dotenv.config();
 
 export interface EnvConfig {
   // Repository URLs
-  nextjsRepoUrl: string;
-  publicRepoUrl: string;
-  
+  nextjsRepoUrl: stri;n,g,;
+  publicRepoUrl: stri;n,g,;
+
   // Repository Purposes
-  nextjsRepoPurpose: string;
-  publicRepoPurpose: string;
-  
+  nextjsRepoPurpose: stri;n,g,;
+  publicRepoPurpose: stri;n,g,;
+
   // Website URLs
-  nextjsAppUrl: string;
-  publicSiteUrl: string;
-  mainSiteUrl: string;
-  
+  nextjsAppUrl: stri;n,g,;
+  publicSiteUrl: stri;n,g,;
+  mainSiteUrl: stri;n,g,;
+
   // Content Flow
-  contentFlow: string;
-  alternativeFlow: string;
-  
+  contentFlow: stri;n,g,;
+  alternativeFlow: stri;n,g,;
+
   // Local Paths
-  learnPath: string;
-  
+  learnPath: stri;n,g,;
+
   // External URLs
-  newsletterUrl: string;
-  podcastUrl: string;
+  newsletterUrl: stri;n,g,;
+  podcastUrl: stri;n,g,;
 }
 
-export const env: EnvConfig = {
+export const env: EnvConfi,g, = {
   // Repository URLs
-  nextjsRepoUrl: process.env.NEXTJS_REPO_URL || '',
-  publicRepoUrl: process.env.PUBLIC_REPO_URL || '',
-  
+  nextjsRepoUrl: proces,s,.env.NEXTJS_REPO_URL || '',
+  publicRepoUrl: proces,s,.env.PUBLIC_REPO_URL || '',
+
   // Repository Purposes
-  nextjsRepoPurpose: process.env.NEXTJS_REPO_PURPOSE || '',
-  publicRepoPurpose: process.env.PUBLIC_REPO_PURPOSE || '',
-  
+  nextjsRepoPurpose: proces,s,.env.NEXTJS_REPO_PURPOSE || '',
+  publicRepoPurpose: proces,s,.env.PUBLIC_REPO_PURPOSE || '',
+
   // Website URLs
-  nextjsAppUrl: process.env.NEXTJS_APP_URL || '',
-  publicSiteUrl: process.env.PUBLIC_SITE_URL || '',
-  mainSiteUrl: process.env.MAIN_SITE_URL || '',
-  
+  nextjsAppUrl: proces,s,.env.NEXTJS_APP_URL || '',
+  publicSiteUrl: proces,s,.env.PUBLIC_SITE_URL || '',
+  mainSiteUrl: proces,s,.env.MAIN_SITE_URL || '',
+
   // Content Flow
-  contentFlow: process.env.CONTENT_FLOW || '',
-  alternativeFlow: process.env.ALTERNATIVE_FLOW || '',
-  
+  contentFlow: proces,s,.env.CONTENT_FLOW || '',
+  alternativeFlow: proces,s,.env.ALTERNATIVE_FLOW || '',
+
   // Local Paths
-  learnPath: process.env.learn || '',
-  
+  learnPath: proces,s,.env.learn || '',
+
   // External URLs
-  newsletterUrl: process.env.newsletter || '',
-  podcastUrl: process.env.podcast || '',
+  newsletterUrl: proces,s,.env.newsletter || '',
+  podcastUrl: proces,s,.env.podcast || '',
 };
 
 // Validate required environment variables
-const requiredEnvVars = [
-  'nextjsRepoUrl',
-  'publicRepoUrl',
-  'learnPath',
-];
+const requiredEnvVars = ['nextjsRepoUrl', 'publicRepoUrl', 'learnPath'];
 
-for (const envVar of requiredEnvVars) {
-  if (!env[envVar as keyof EnvConfig]) {
+for (const envVar of requiredEnvVars: unkno,w,n): void {
+  if (!env[envVar as keyof EnvConfig]: unknown) {
     throw new Error(`Missing required environment variable: ${envVar}`);
   }
 }
 
-export default env; 
+export default env;
