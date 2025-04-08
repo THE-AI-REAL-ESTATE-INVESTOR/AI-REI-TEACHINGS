@@ -8,10 +8,10 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn src/cli.ts",
-    "merge": "ts-node src/cli.ts merge",
-    "status": "ts-node src/cli.ts status",
-    "commit": "ts-node src/cli.ts commit",
-    "help": "ts-node src/cli.ts help",
+    "merge": "tsx src/cli.ts merge",
+    "status": "tsx src/cli.ts status",
+    "commit": "tsx src/cli.ts commit",
+    "help": "tsx src/cli.ts help",
     "format": "prettier --write \"src/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "NODE_OPTIONS='--loader ts-node/esm' eslint . --ext .ts --config eslint.config.ts",
@@ -24,7 +24,8 @@
     "fix:types": "tsx src/scripts/fixers/type-fixer.ts",
     "fix:style": "tsx src/scripts/fixers/style-fixer.ts",
     "fix:all": "tsx src/scripts/fix-all.ts",
-    "fix:parse": "tsx src/scripts/fixers/parse-fixer.ts"
+    "fix:parse": "tsx src/scripts/fixers/parse-fixer.ts",
+    "publish": "tsx src/cli.ts learning publish"
   },
   "keywords": [
     "ai",
@@ -35,8 +36,6 @@
   "license": "ISC",
   "packageManager": "pnpm@10.4.1",
   "dependencies": {
-    "@octokit/rest": "^21.1.1",
-    "@types/commander": "^2.12.5",
     "@types/glob": "^8.1.0",
     "@types/marked": "^6.0.0",
     "@types/node": "^22.13.14",
@@ -45,7 +44,9 @@
     "glob": "^11.0.1",
     "marked": "^15.0.7",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "yaml": "^2.4.1",
+    "date-fns": "^3.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
@@ -61,6 +62,7 @@
     "jiti": "^2.4.2",
     "prettier": "^3.5.3",
     "ts-node-dev": "^2.0.0",
-    "tsconfig-paths": "^4.2.0"
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.7.1"
   }
 }

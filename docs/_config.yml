@@ -1,31 +1,22 @@
-# Site settings
 title: AI Learning Hub
 description: Empowering Business Owners with AI Knowledge
 baseurl: ""
-url: "https://learn.aireinvestor.com"
-
-# Build settings
+url: https://learn.aireinvestor.com
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
-# Defaults
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
-      type: "pages"
+      type: pages
     values:
-      layout: "default"
-  -
-    scope:
+      layout: default
+  - scope:
       path: ""
-      type: "announcements"
+      type: announcements
     values:
-      layout: "announcement"
-
-# Exclude files from processing
+      layout: announcement
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -35,16 +26,11 @@ exclude:
   - .gitignore
   - README.md
   - CNAME
-
-# Plugin settings
 plugins:
   - jekyll-relative-links
-
 relative_links:
   enabled: true
   collections: true
-
-# Navigation Structure
 navigation:
   - title: Home
     url: /
@@ -67,12 +53,10 @@ navigation:
     url: https://freeblog.aireinvestor.com/newsletter
   - title: Podcast
     url: https://freeblog.aireinvestor.com/podcast
-
-# Collections
 collections:
   learn:
     output: true
     permalink: /learn/:path/
   announcements:
     output: true
-    permalink: /announcements/:title/ 
+    permalink: /announcements/:title/

@@ -1,10 +1,9 @@
-import { readFileSync, readdirSync } from 'fs';
+import { readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { marked } from 'marked';
 import { format, parse } from 'date-fns';
-import announcementConfig from '../config/announcements.config';
-import yaml from 'yaml';
-import { writeFileSync } from 'fs';
+import announcementConfig from '../config/announcements.config.js';
+import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 
 interface ContentSection {
   type: 'table' | 'header' | 'text' | 'announcement';
@@ -22,6 +21,12 @@ interface Announcement {
 }
 
 export class ContentParser {
+  private currentDate: Date;
+
+  constructor() {
+    this.currentDate = new Date();
+  }
+
   async fetchContent(url: string): Promise<ContentSection[]> {
     const response = await fetch(url);
     const markdown = await response.text();
@@ -78,8 +83,24 @@ export class ContentParser {
       const content = readFileSync(join(announcementsDir, file), 'utf8');
       const { metadata, body } = this.parseAnnouncementFrontMatter(content);
       
+      // Use current date if no date is provided or if date is in the future
+      const announcementDate = metadata.date ? 
+        parse(metadata.date, announcementConfig.dateFormat, new Date()) : 
+        this.currentDate;
+
+      // If the date is in the future, use current date
+      if (announcementDate > this.currentDate) {
+        console.log(`Warning: Future date detected in ${file}, using current date instead.`);
+      }
+
+      const finalDate = announcementDate > this.currentDate ? this.currentDate : announcementDate;
+      
+      // Update the file with the current date
+      const updatedContent = this.updateAnnouncementDate(content, finalDate);
+      writeFileSync(join(announcementsDir, file), updatedContent);
+
       return {
-        date: parse(metadata.date, announcementConfig.dateFormat, new Date()),
+        date: finalDate,
         title: metadata.title,
         author: metadata.author || announcementConfig.defaultAuthor,
         content: body,
@@ -92,6 +113,14 @@ export class ContentParser {
       announcementConfig.sortOrder === 'desc' 
         ? b.date.getTime() - a.date.getTime()
         : a.date.getTime() - b.date.getTime()
+    );
+  }
+
+  private updateAnnouncementDate(content: string, date: Date): string {
+    const formattedDate = format(date, announcementConfig.dateFormat);
+    return content.replace(
+      /^(---\n(?:.*\n)*date:\s*).*?(\n(?:.*\n)*---)/, 
+      `$1${formattedDate}$2`
     );
   }
 
@@ -150,7 +179,7 @@ export class ContentParser {
 
   private async updateNavigation(announcements: Announcement[]): Promise<void> {
     const configPath = join(process.cwd(), 'docs', '_config.yml');
-    const config = yaml.load(readFileSync(configPath, 'utf8'));
+    const config = parseYaml(readFileSync(configPath, 'utf8'));
 
     // Add announcements to navigation if not present
     if (!config.navigation.some(item => item.url === announcementConfig.navUrl)) {
@@ -160,7 +189,7 @@ export class ContentParser {
       });
     }
 
-    await writeFileSync(configPath, yaml.dump(config));
+    await writeFileSync(configPath, stringifyYaml(config));
   }
 }
 

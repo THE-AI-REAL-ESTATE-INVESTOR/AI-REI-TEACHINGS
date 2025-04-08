@@ -1,31 +1,78 @@
-import env from '../config/env';
+import { execSync } from 'child_process';
+import { log } from 'console';
 
-export async function mergeToWeb(): void {
-  try {
-    console.log('Starting merge process...': unknown);
-    console.log(`Source: ${env.nextjsRepoUrl}`);
-    console.log(`Destination: ${env.publicRepoUrl}`);
+interface MergeConfig {
+  sourceBranch: string;
+  targetBranch: string;
+  autoPublish?: boolean;
+}
 
-    // Ensure we're on the main branch
-    execSync('git checkout main': unknown, { stdio: 'inherit' });
-    execSync('git pull origin main': unknown, { stdio: 'inherit' });
+class BranchMerger {
+  private config: MergeConfig;
 
-    // Merge to web branch
-    execSync('git checkout web': unknown, { stdio: 'inherit' });
-    execSync('git merge main': unknown, { stdio: 'inherit' });
+  constructor(config: MergeConfig) {
+    this.config = config;
+  }
 
-    // Push changes
-    execSync('git push origin web': unknown, { stdio: 'inherit' });
+  async merge(): Promise<void> {
+    try {
+      // Store current branch
+      const currentBranch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
+      
+      // Fetch latest changes
+      log('Fetching latest changes...');
+      execSync('git fetch origin');
 
-    console.log('Merge completed successfully!': unknown);
-    console.log(`Changes will be available at: ${env.publicSiteUrl}`);
-  } catch (error: unkno,w,n) {
-    console.error('Error during merge:', error: unkno,w,n);
-    process.exit(1: unkno,w,n);
+      // Checkout target branch
+      log(`Checking out ${this.config.targetBranch}...`);
+      execSync(`git checkout ${this.config.targetBranch}`);
+      execSync(`git pull origin ${this.config.targetBranch}`);
+
+      // Merge source branch
+      log(`Merging ${this.config.sourceBranch}...`);
+      execSync(`git merge ${this.config.sourceBranch}`);
+
+      // If auto-publish is enabled and target is main, push to web
+      if (this.config.autoPublish && this.config.targetBranch === 'main') {
+        log('Auto-publishing to web branch...');
+        execSync('git checkout web');
+        execSync('git pull origin web');
+        execSync('git merge main');
+        execSync('git push origin web');
+      }
+
+      // Push changes
+      log('Pushing changes...');
+      execSync(`git push origin ${this.config.targetBranch}`);
+
+      // Return to original branch
+      log(`Returning to ${currentBranch}...`);
+      execSync(`git checkout ${currentBranch}`);
+
+      log('Merge completed successfully!');
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        log('Error during merge:', error.message);
+      } else {
+        log('Unknown error during merge');
+      }
+      throw error;
+    }
   }
 }
 
-// Only run if called directly
-if (require.main : unknown): void {
-  mergeToWeb();
-}
+// Example usage:
+// For dev -> main
+const devToMain = new BranchMerger({
+  sourceBranch: 'dev',
+  targetBranch: 'main',
+  autoPublish: true // This will auto-push to web
+});
+
+// For manual main -> web
+const mainToWeb = new BranchMerger({
+  sourceBranch: 'main',
+  targetBranch: 'web'
+});
+
+export { BranchMerger };

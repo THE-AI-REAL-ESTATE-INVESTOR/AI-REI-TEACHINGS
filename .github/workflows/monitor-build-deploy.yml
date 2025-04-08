@@ -1,0 +1,140 @@
+name: Build, Deploy, and Monitor GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  monitor:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deployment status
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const deployments = await github.rest.repos.listDeployments({
+              owner,
+              repo,
+              environment: 'github-pages'
+            });
+            
+            if (deployments.data.length > 0) {
+              const latestDeployment = deployments.data[0];
+              const status = await github.rest.repos.listDeploymentStatuses({
+                owner,
+                repo,
+                deployment_id: latestDeployment.id
+              });
+              
+              if (status.data.length > 0) {
+                const latestStatus = status.data[0];
+                console.log(`Deployment Status: ${latestStatus.state}`);
+                console.log(`Environment URL: ${latestStatus.environment_url}`);
+                
+                if (latestStatus.state === 'success') {
+                  console.log('🎉 Site successfully deployed!');
+                } else if (latestStatus.state === 'failure') {
+                  core.setFailed('Deployment failed');
+                }
+              }
+            }
+      
+      - name: Create deployment notification
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const commits = await github.rest.repos.listCommits({
+              owner,
+              repo,
+              per_page: 1
+            });
+            
+            if (commits.data.length > 0) {
+              const latestCommit = commits.data[0];
+              const message = `🚀 Site deployment completed!\nView the changes at: https://learn.aireinvestor.com\nDeployment time: ${new Date().toISOString()}\nCommit: ${latestCommit.sha}`;
+              
+              try {
+                if (context.issue.number) {
+                  await github.rest.issues.createComment({
+                    owner,
+                    repo,
+                    issue_number: context.issue.number,
+                    body: message
+                  });
+                } else {
+                  console.log(message);
+                }
+              } catch (error) {
+                console.log('Could not create comment, logging deployment info instead:');
+                console.log(message);
+              }
+            } 

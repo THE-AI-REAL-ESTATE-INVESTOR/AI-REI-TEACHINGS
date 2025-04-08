@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import yaml from 'js-yaml';
+import yaml from 'yaml';
 
 export interface AnnouncementConfig {
   // Directory settings
@@ -26,7 +26,7 @@ export interface AnnouncementConfig {
 // Load _config.yml to get navigation settings
 const configPath = join(process.cwd(), 'docs', '_config.yml');
 const configFile = readFileSync(configPath, 'utf8');
-const siteConfig = yaml.load(configFile) as any;
+const siteConfig = yaml.parse(configFile) as Record<string, unknown>;
 
 export const announcementConfig: AnnouncementConfig = {
   // Directory settings
@@ -38,7 +38,7 @@ export const announcementConfig: AnnouncementConfig = {
   defaultAuthor: 'airienvestor - Mark Carpenter',
   sortOrder: 'desc',
   
-  // Navigation settings - integrate with _config.yml
+  // Navigation settings
   navTitle: 'Announcements',
   navUrl: '/announcements',
   timelinePosition: 'above',
@@ -46,7 +46,7 @@ export const announcementConfig: AnnouncementConfig = {
   
   // Metadata requirements
   requiredFields: ['date', 'title', 'author'],
-  dateFormat: 'YYYY-MM-DD'
+  dateFormat: 'yyyy-MM-dd',
 };
 
 export default announcementConfig; 

@@ -99,6 +99,84 @@ Visit [aireinvestor.com](https://aireinvestor.com) to:
   - Includes merge automation scripts
   - Development utilities
 
+## Branch Workflow
+
+```mermaid
+graph TD
+    subgraph Development[Development Flow]
+        A1[dev branch] -->|Development & Testing| A2[Content Creation]
+        A2 -->|Automation Scripts| A3[Content Processing]
+        A3 -->|Merge| B1
+    end
+
+    subgraph Distribution[Distribution Flow]
+        B1[main branch] -->|Auto-distribute| B2[web branch]
+        B2 -->|GitHub Pages| B3[learn.aireinvestor.com]
+    end
+
+    subgraph Automation[Automation Tools]
+        C1[content-parser.ts] -->|Process| A3
+        C2[merge.ts] -->|Sync| B1
+        C3[format-content.ts] -->|Format| A3
+    end
+```
+
+### Branch Structure
+
+1. **dev branch** (Development)
+   - Where all development happens
+   - Content creation and editing
+   - Testing automation scripts
+   - Running content processors
+
+2. **main branch** (Distribution)
+   - Receives processed content from dev
+   - Acts as distribution point
+   - Automatically pushes to web branch
+   - No direct editing here
+
+3. **web branch** (Public)
+   - Public-facing content only
+   - Hosted on GitHub Pages
+   - Automatically updated from main
+   - No direct editing
+
+### Workflow Steps
+
+1. **Development** (dev branch):
+   - Create/edit content in `docs/`
+   - Run automation scripts
+   - Test changes locally
+   - Commit changes
+
+2. **Distribution** (main branch):
+   - Merge approved changes from dev
+   - Automation scripts run
+   - Content is processed and validated
+   - Ready for public distribution
+
+3. **Publication** (web branch):
+   - Receives processed content from main
+   - GitHub Pages deploys to learn.aireinvestor.com
+   - Public can view changes
+
+### Automation Tools Location
+
+```
+src/
+├── scripts/
+│   ├── content-parser.ts     # Process content
+│   ├── merge.ts             # Handle branch merging
+│   ├── format-content.ts    # Format content
+│   └── fixers/             # Content fix utilities
+└── config/
+    └── site.config.ts      # Site configuration
+
+.portfolio/                  # Separate portfolio tools
+└── scripts/
+    └── portfolio-pusher.ts # Portfolio-specific automation
+```
+
 ## Development Workflow
 
 ### Branch Structure
