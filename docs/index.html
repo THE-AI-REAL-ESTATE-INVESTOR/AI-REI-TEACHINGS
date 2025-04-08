@@ -223,6 +223,60 @@ layout: none
                 width: 100%;
             }
         }
+
+        /* Announcements Timeline Styles */
+        .annaonucmnets {
+            margin: 40px 0;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            border-left: 2px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            background: var(--background-color);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 10px 0;
+            color: var(--text-color);
+        }
+
+        .timeline-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .timeline-content a:hover {
+            text-decoration: underline;
+        }
+
+        .timeline-content .author {
+            color: var(--secondary-color);
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -328,6 +382,12 @@ layout: none
             <a href="https://freeblog.aireinvestor.com" class="cta-button">Get Early Access</a>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{ site.time | date: '%Y' }} AI REI Teachings. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
 

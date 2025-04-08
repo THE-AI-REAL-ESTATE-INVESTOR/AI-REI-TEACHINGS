@@ -1,0 +1,15 @@
+<!-- Announcements Timeline -->
+<div class="annaonucmnets">
+  <div class="timeline">
+    {% for announcement in site.announcements reversed %}
+      <div class="timeline-item">
+        <div class="timeline-date">{{ announcement.date | date: "%b %d, %Y" }}</div>
+        <div class="timeline-content">
+          <h3><a href="{{ announcement.url }}">{{ announcement.title }}</a></h3>
+          <p class="author">By {{ announcement.author | default: "airienvestor - Mark Carpenter" }}</p>
+          {{ announcement.excerpt }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div> 
