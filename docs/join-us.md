@@ -1,4 +1,11 @@
-# HELLO AND WELCOME! Join Our AI Real Estate Tech Revolution! 🚀
+---
+layout: default
+title: Join Our AI Real Estate Tech Revolution
+description: Join our team and help build the future of AI-powered real estate technology
+permalink: /join-us/
+---
+
+# Join Our AI Real Estate Tech Revolution! 🚀
 
 ## This public branch is just the tip of the iceberg! 🏔️
 
