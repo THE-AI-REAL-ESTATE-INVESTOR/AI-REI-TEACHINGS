@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="announcement">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <div class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      <span class="author">By {{ page.author | default: "airienvestor - Mark Carpenter" }}</span>
+      {% if page.category %}
+      <span class="category">{{ page.category }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <footer>
+    <a href="/announcements">&larr; Back to Announcements</a>
+  </footer>
+</article> 
