@@ -199,6 +199,42 @@ layout: none
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
+        
+        .featured-box {
+            background: linear-gradient(135deg, #2a5885, #1c3f5e);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .featured-content {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px;
+        }
+        
+        .featured-button {
+            background: white;
+            color: #2a5885;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .featured-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
         @media (max-width: 768px) {
             .container {
@@ -380,6 +416,14 @@ layout: none
             <h2>Coming Soon: Auto Blog Poster Tool</h2>
             <p>Be among the first 100 users to access our revolutionary AI-powered blog creation tool for FREE!</p>
             <a href="https://freeblog.aireinvestor.com" class="cta-button">Get Early Access</a>
+        </div>
+
+        <div class="featured-box">
+            <div class="featured-content">
+                <h3>QuickBooks PO Automation</h3>
+                <p>Explore our AI-driven solution for automating purchase order processing in QuickBooks Desktop Enterprise, specifically designed for fashion and beauty businesses.</p>
+                <a href="/client-work/proposals/qbautomation/index.html" class="featured-button">View Presentation</a>
+            </div>
         </div>
     </div>
 
