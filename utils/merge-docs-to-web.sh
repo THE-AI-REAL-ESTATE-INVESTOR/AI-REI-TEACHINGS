@@ -15,8 +15,8 @@ if [ "$CURRENT_BRANCH" != "main" ]; then
     exit 1
 fi
 
-# Check if there are any uncommitted changes
-if [ -n "$(git status --porcelain)" ]; then
+# Check if there are any uncommitted changes (ignoring untracked files)
+if [ -n "$(git diff-index --name-only HEAD --)" ]; then
     echo -e "${RED}Error: You have uncommitted changes. Please commit or stash them first.${NC}"
     exit 1
 fi
@@ -43,7 +43,7 @@ echo -e "${YELLOW}Merging only the docs directory from main...${NC}"
 git checkout main -- docs/
 
 # Check if there are changes to commit
-if [ -z "$(git status --porcelain)" ]; then
+if [ -z "$(git diff-index --name-only HEAD --)" ]; then
     echo -e "${YELLOW}No changes to commit. Web branch is already up to date.${NC}"
     git checkout web
     git branch -D $TEMP_BRANCH
