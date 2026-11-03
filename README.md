@@ -1,5 +1,11 @@
 # AI REI Teachings - Open Source Project
 
+## About
+- **What it is:** Public AI-automation education site, published with GitHub Pages at learn.aireinvestor.com.
+- **Business:** AIreinvestor
+- **Status:** live, not updated since 2025-05
+- **Source:** agent research 2026-11-03, checked by Mark
+
 ## 👋 Welcome to Our Community!
 
 This repository is a public version of a larger project focused on AI automation, development education, and business transformation. We're looking for passionate contributors who want to learn, grow, and help shape the future of AI-powered development.
